@@ -1,0 +1,50 @@
+[
+  {
+    "hypothesis_id": "H1",
+    "query_id": "Q1",
+    "sql": "",
+    "result_df_json": "[]",
+    "test_result": null,
+    "verdict": "REJECTED"
+  },
+  {
+    "hypothesis_id": "H2",
+    "query_id": "Q2",
+    "sql": "",
+    "result_df_json": "[]",
+    "test_result": null,
+    "verdict": "REJECTED"
+  },
+  {
+    "hypothesis_id": "H3",
+    "query_id": "Q3",
+    "sql": "",
+    "result_df_json": "[]",
+    "test_result": null,
+    "verdict": "REJECTED"
+  },
+  {
+    "hypothesis_id": "H4",
+    "query_id": "Q4",
+    "sql": "",
+    "result_df_json": "[]",
+    "test_result": null,
+    "verdict": "REJECTED"
+  },
+  {
+    "hypothesis_id": "H5",
+    "query_id": "Q5",
+    "sql": "",
+    "result_df_json": "[]",
+    "test_result": null,
+    "verdict": "REJECTED"
+  },
+  {
+    "hypothesis_id": "H6",
+    "query_id": "Q6",
+    "sql": "",
+    "result_df_json": "[]",
+    "test_result": null,
+    "verdict": "REJECTED"
+  }
+]

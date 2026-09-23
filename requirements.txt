@@ -1,0 +1,37 @@
+# ── Metric Detective ─────────────────────────────────────────
+# Core dependencies for the full project.
+# Phase 1: duckdb, sqlalchemy, pandas, python-dotenv, pyyaml, kaggle
+# Phase 2+: statsmodels, scipy, plotly, streamlit, pydantic, google-genai, pytest
+
+# ── Database & ETL ───────────────────────────────────────────
+duckdb>=1.1.0
+duckdb-engine>=0.15.0
+sqlalchemy>=2.0.0
+pandas>=2.1.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+
+# ── Data Science ─────────────────────────────────────────────
+statsmodels>=0.14.0
+scipy>=1.11.0
+numpy>=1.24.0
+
+# ── Visualization ───────────────────────────────────────────
+plotly>=5.18.0
+
+# ── App ──────────────────────────────────────────────────────
+streamlit>=1.30.0
+
+# ── AI / LLM ────────────────────────────────────────────────
+pydantic>=2.5.0
+google-genai>=1.0.0
+
+# ── Data Download ───────────────────────────────────────────
+kaggle>=1.6.0
+
+# ── Testing ──────────────────────────────────────────────────
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# ── Logging ──────────────────────────────────────────────────
+rich>=13.0.0

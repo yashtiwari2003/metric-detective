@@ -1,0 +1,134 @@
+# ── Metric Detective — Configuration ─────────────────────────
+# All KPI definitions, dimensions, and thresholds in one place.
+# Code reads from here — never hard-code these values.
+
+project:
+  name: "Metric Detective"
+  description: "AI-powered root-cause analyst for business KPI anomalies"
+
+# ── Database ─────────────────────────────────────────────────
+database:
+  # Override via DB_URL in .env
+  default_url: "duckdb:///data/metric.duckdb"
+  query_timeout_seconds: 20
+  query_row_limit: 1000
+
+# ── KPI Definitions ─────────────────────────────────────────
+# Each KPI: name, SQL expression, type (additive / ratio / average),
+# direction (higher_is_better / lower_is_better)
+kpis:
+  revenue:
+    display_name: "Revenue"
+    sql_expr: "SUM(price + freight_value)"
+    type: additive
+    direction: higher_is_better
+    format: "${:,.2f}"
+
+  orders:
+    display_name: "Orders"
+    sql_expr: "COUNT(DISTINCT order_id)"
+    type: additive
+    direction: higher_is_better
+    format: "{:,.0f}"
+
+  avg_order_value:
+    display_name: "Avg Order Value"
+    sql_expr: "SUM(price + freight_value) / COUNT(DISTINCT order_id)"
+    type: ratio
+    numerator: "SUM(price + freight_value)"
+    denominator: "COUNT(DISTINCT order_id)"
+    direction: higher_is_better
+    format: "${:,.2f}"
+
+  avg_delivery_days:
+    display_name: "Avg Delivery Days"
+    sql_expr: "AVG(delivery_days)"
+    type: average
+    direction: lower_is_better
+    format: "{:.1f}"
+
+  late_delivery_rate:
+    display_name: "Late Delivery Rate"
+    sql_expr: "AVG(CAST(is_late AS FLOAT))"
+    type: ratio
+    numerator: "SUM(CAST(is_late AS INT))"
+    denominator: "COUNT(*)"
+    direction: lower_is_better
+    format: "{:.1%}"
+
+  cancellation_rate:
+    display_name: "Cancellation Rate"
+    sql_expr: "AVG(CAST(is_canceled AS FLOAT))"
+    type: ratio
+    numerator: "SUM(CAST(is_canceled AS INT))"
+    denominator: "COUNT(*)"
+    direction: lower_is_better
+    format: "{:.1%}"
+
+  avg_review_score:
+    display_name: "Avg Review Score"
+    sql_expr: "AVG(review_score)"
+    type: average
+    direction: higher_is_better
+    format: "{:.2f}"
+
+# ── Dimensions to slice by ───────────────────────────────────
+dimensions:
+  - name: customer_state
+    display_name: "Customer State"
+    top_n: null           # all values
+
+  - name: seller_state
+    display_name: "Seller State"
+    top_n: null
+
+  - name: category
+    display_name: "Product Category"
+    top_n: 20             # top 20 by volume
+
+  - name: payment_type
+    display_name: "Payment Type"
+    top_n: null
+
+  - name: seller_id
+    display_name: "Seller"
+    top_n: 10             # top 10 sellers only
+
+# ── Anomaly Detection ───────────────────────────────────────
+anomaly_detection:
+  # STL + robust z-score method
+  stl_period: 7           # weekly seasonality
+  z_score_threshold: 3.0  # flag if |z| > this
+  # Week-over-week % change mode
+  wow_pct_threshold: 20.0 # flag if |WoW%| > this
+  min_data_points: 30     # minimum days of data for STL
+
+# ── Contribution Analysis ───────────────────────────────────
+contribution_analysis:
+  baseline_periods: 4     # compare vs previous 4 same-length periods
+  min_contribution_pct: 10.0  # minimum % contribution to flag a segment
+
+# ── Statistical Tests ───────────────────────────────────────
+statistical_tests:
+  significance_level: 0.05
+  min_sample_size: 30
+
+# ── LLM Settings ────────────────────────────────────────────
+llm:
+  temperature: 0.2
+  max_retries: 3
+  retry_base_delay: 1.0   # seconds, exponential backoff
+  max_hypotheses: 8
+  min_hypotheses: 5
+  max_sql_attempts: 3     # self-correction loop
+
+# ── Verifier ─────────────────────────────────────────────────
+verifier:
+  number_tolerance_pct: 1.0  # ±1% tolerance for number matching
+  max_fix_rounds: 2          # max rounds of mismatch correction
+
+# ── Report ───────────────────────────────────────────────────
+report:
+  output_dir: "reports"
+  include_rejected_hypotheses: true
+  include_sql_queries: true

@@ -1,0 +1,302 @@
+[
+  {
+    "anomaly_id": 1,
+    "type": "region_drop",
+    "kpi_affected": "orders",
+    "start_date": "2017-06-27",
+    "end_date": "2017-07-02",
+    "root_cause_dimension": "customer_state",
+    "root_cause_segment": "RS",
+    "expected_pct_change": -0.4
+  },
+  {
+    "anomaly_id": 2,
+    "type": "region_drop",
+    "kpi_affected": "orders",
+    "start_date": "2017-07-14",
+    "end_date": "2017-07-19",
+    "root_cause_dimension": "customer_state",
+    "root_cause_segment": "SP",
+    "expected_pct_change": -0.4
+  },
+  {
+    "anomaly_id": 3,
+    "type": "region_drop",
+    "kpi_affected": "orders",
+    "start_date": "2018-04-07",
+    "end_date": "2018-04-12",
+    "root_cause_dimension": "customer_state",
+    "root_cause_segment": "PR",
+    "expected_pct_change": -0.4
+  },
+  {
+    "anomaly_id": 4,
+    "type": "region_drop",
+    "kpi_affected": "orders",
+    "start_date": "2018-04-05",
+    "end_date": "2018-04-10",
+    "root_cause_dimension": "customer_state",
+    "root_cause_segment": "RJ",
+    "expected_pct_change": -0.4
+  },
+  {
+    "anomaly_id": 5,
+    "type": "region_drop",
+    "kpi_affected": "orders",
+    "start_date": "2017-07-25",
+    "end_date": "2017-07-30",
+    "root_cause_dimension": "customer_state",
+    "root_cause_segment": "PR",
+    "expected_pct_change": -0.4
+  },
+  {
+    "anomaly_id": 6,
+    "type": "category_collapse",
+    "kpi_affected": "orders",
+    "start_date": "2017-09-13",
+    "end_date": "2017-09-16",
+    "root_cause_dimension": "category",
+    "root_cause_segment": "furniture_decor",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 7,
+    "type": "category_collapse",
+    "kpi_affected": "orders",
+    "start_date": "2017-06-07",
+    "end_date": "2017-06-10",
+    "root_cause_dimension": "category",
+    "root_cause_segment": "health_beauty",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 8,
+    "type": "category_collapse",
+    "kpi_affected": "orders",
+    "start_date": "2018-05-09",
+    "end_date": "2018-05-12",
+    "root_cause_dimension": "category",
+    "root_cause_segment": "computers_accessories",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 9,
+    "type": "category_collapse",
+    "kpi_affected": "orders",
+    "start_date": "2018-01-26",
+    "end_date": "2018-01-29",
+    "root_cause_dimension": "category",
+    "root_cause_segment": "health_beauty",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 10,
+    "type": "category_collapse",
+    "kpi_affected": "orders",
+    "start_date": "2017-10-08",
+    "end_date": "2017-10-11",
+    "root_cause_dimension": "category",
+    "root_cause_segment": "bed_bath_table",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 11,
+    "type": "payment_failure",
+    "kpi_affected": "orders",
+    "start_date": "2018-03-08",
+    "end_date": "2018-03-12",
+    "root_cause_dimension": "payment_type",
+    "root_cause_segment": "debit_card",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 12,
+    "type": "payment_failure",
+    "kpi_affected": "orders",
+    "start_date": "2017-09-30",
+    "end_date": "2017-10-04",
+    "root_cause_dimension": "payment_type",
+    "root_cause_segment": "debit_card",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 13,
+    "type": "payment_failure",
+    "kpi_affected": "orders",
+    "start_date": "2018-03-14",
+    "end_date": "2018-03-18",
+    "root_cause_dimension": "payment_type",
+    "root_cause_segment": "credit_card",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 14,
+    "type": "delivery_delay",
+    "kpi_affected": "late_delivery_rate",
+    "start_date": "2017-10-01",
+    "end_date": "2017-10-08",
+    "root_cause_dimension": "seller_state",
+    "root_cause_segment": "MG",
+    "expected_pct_change": null
+  },
+  {
+    "anomaly_id": 15,
+    "type": "delivery_delay",
+    "kpi_affected": "late_delivery_rate",
+    "start_date": "2017-12-31",
+    "end_date": "2018-01-07",
+    "root_cause_dimension": "seller_state",
+    "root_cause_segment": "SP",
+    "expected_pct_change": null
+  },
+  {
+    "anomaly_id": 16,
+    "type": "delivery_delay",
+    "kpi_affected": "late_delivery_rate",
+    "start_date": "2017-12-26",
+    "end_date": "2018-01-02",
+    "root_cause_dimension": "seller_state",
+    "root_cause_segment": "PR",
+    "expected_pct_change": null
+  },
+  {
+    "anomaly_id": 17,
+    "type": "delivery_delay",
+    "kpi_affected": "late_delivery_rate",
+    "start_date": "2017-11-18",
+    "end_date": "2017-11-25",
+    "root_cause_dimension": "seller_state",
+    "root_cause_segment": "SP",
+    "expected_pct_change": null
+  },
+  {
+    "anomaly_id": 18,
+    "type": "review_score_drop",
+    "kpi_affected": "avg_review_score",
+    "start_date": "2018-02-12",
+    "end_date": "2018-02-17",
+    "root_cause_dimension": "overall",
+    "root_cause_segment": "overall",
+    "expected_pct_change": null
+  },
+  {
+    "anomaly_id": 19,
+    "type": "review_score_drop",
+    "kpi_affected": "avg_review_score",
+    "start_date": "2017-08-01",
+    "end_date": "2017-08-06",
+    "root_cause_dimension": "overall",
+    "root_cause_segment": "overall",
+    "expected_pct_change": null
+  },
+  {
+    "anomaly_id": 20,
+    "type": "review_score_drop",
+    "kpi_affected": "avg_review_score",
+    "start_date": "2018-05-11",
+    "end_date": "2018-05-16",
+    "root_cause_dimension": "overall",
+    "root_cause_segment": "overall",
+    "expected_pct_change": null
+  },
+  {
+    "anomaly_id": 21,
+    "type": "price_change",
+    "kpi_affected": "revenue",
+    "start_date": "2017-12-09",
+    "end_date": "2017-12-14",
+    "root_cause_dimension": "overall",
+    "root_cause_segment": "overall",
+    "expected_pct_change": -0.3
+  },
+  {
+    "anomaly_id": 22,
+    "type": "price_change",
+    "kpi_affected": "revenue",
+    "start_date": "2018-05-25",
+    "end_date": "2018-05-30",
+    "root_cause_dimension": "overall",
+    "root_cause_segment": "overall",
+    "expected_pct_change": -0.3
+  },
+  {
+    "anomaly_id": 23,
+    "type": "price_change",
+    "kpi_affected": "revenue",
+    "start_date": "2017-09-03",
+    "end_date": "2017-09-08",
+    "root_cause_dimension": "overall",
+    "root_cause_segment": "overall",
+    "expected_pct_change": -0.3
+  },
+  {
+    "anomaly_id": 24,
+    "type": "mixed_drop",
+    "kpi_affected": "orders",
+    "start_date": "2017-07-03",
+    "end_date": "2017-07-08",
+    "root_cause_dimension": "customer_state,category",
+    "root_cause_segment": "PR,health_beauty",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 25,
+    "type": "mixed_drop",
+    "kpi_affected": "orders",
+    "start_date": "2017-10-01",
+    "end_date": "2017-10-06",
+    "root_cause_dimension": "customer_state,category",
+    "root_cause_segment": "SP,sports_leisure",
+    "expected_pct_change": -1.0
+  },
+  {
+    "anomaly_id": 26,
+    "type": "noise_decoy",
+    "kpi_affected": "orders",
+    "start_date": "2018-01-06",
+    "end_date": "2018-01-09",
+    "root_cause_dimension": "none",
+    "root_cause_segment": "none",
+    "expected_pct_change": -0.05
+  },
+  {
+    "anomaly_id": 27,
+    "type": "noise_decoy",
+    "kpi_affected": "orders",
+    "start_date": "2018-04-05",
+    "end_date": "2018-04-08",
+    "root_cause_dimension": "none",
+    "root_cause_segment": "none",
+    "expected_pct_change": -0.05
+  },
+  {
+    "anomaly_id": 28,
+    "type": "noise_decoy",
+    "kpi_affected": "orders",
+    "start_date": "2018-05-10",
+    "end_date": "2018-05-13",
+    "root_cause_dimension": "none",
+    "root_cause_segment": "none",
+    "expected_pct_change": -0.05
+  },
+  {
+    "anomaly_id": 29,
+    "type": "noise_decoy",
+    "kpi_affected": "orders",
+    "start_date": "2017-06-30",
+    "end_date": "2017-07-03",
+    "root_cause_dimension": "none",
+    "root_cause_segment": "none",
+    "expected_pct_change": -0.05
+  },
+  {
+    "anomaly_id": 30,
+    "type": "noise_decoy",
+    "kpi_affected": "orders",
+    "start_date": "2017-10-12",
+    "end_date": "2017-10-15",
+    "root_cause_dimension": "none",
+    "root_cause_segment": "none",
+    "expected_pct_change": -0.05
+  }
+]
